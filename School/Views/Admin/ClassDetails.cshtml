@@ -1,0 +1,51 @@
+﻿@model School.Class
+
+@{
+    ViewBag.Title = "ClassDetails";
+    Layout = "~/Views/Shared/_ClassLayout.cshtml";
+}
+
+<h2>ClassDetails</h2>
+
+<div>
+    <h4>Class</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClassNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Strength)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Strength)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClassTeacher)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassTeacher)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "ClassEdit", new { id = Model.ClassNo }) |
+    @Html.ActionLink("Back to List", "Student")
+</p>

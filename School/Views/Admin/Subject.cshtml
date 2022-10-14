@@ -1,0 +1,52 @@
+﻿@model IEnumerable<School.Subject>
+
+@{
+    ViewBag.Title = "Subject";
+    Layout = "~/Views/Shared/_SubjectLayout.cshtml";
+}
+
+<h2>Subject</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SubjectId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubjectName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Duration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClassNo)
+        </th>
+        <th>Operations</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubjectId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubjectName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Duration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClassNo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditSubject", new { id=item.SubjectId }) |
+            @Html.ActionLink("Details", "DetailsSubject", new { id=item.SubjectId }) |
+            @Html.ActionLink("Delete", "DeleteSubject", new { id=item.SubjectId })
+        </td>
+    </tr>
+}
+
+</table>

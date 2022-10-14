@@ -1,0 +1,50 @@
+﻿@model IEnumerable<School.Student>
+
+@{
+    ViewBag.Title = "Student";
+    Layout = "~/Views/Shared/_SchoolLayout.cshtml";
+}
+
+<h2>Student</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RollNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClassNo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RollNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DOB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClassNo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditStudent", new {  id=item.RollNo }) |
+            @Html.ActionLink("Details", "DetailsStudent", new {  id=item.RollNo }) |
+            @Html.ActionLink("Delete", "DeleteStudent", new {  id=item.RollNo })
+        </td>
+    </tr>
+}
+
+</table>

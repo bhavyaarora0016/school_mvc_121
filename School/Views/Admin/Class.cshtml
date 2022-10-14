@@ -1,0 +1,52 @@
+﻿@model IEnumerable<School.Class>
+
+@{
+    ViewBag.Title = "Class";
+    Layout = "~/Views/Shared/_ClassLayout.cshtml";
+}
+
+<h2>Class</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ClassNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Strength)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClassTeacher)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClassNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Strength)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClassTeacher)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "ClassEdit", new {  id=item.ClassNo }) |
+            @Html.ActionLink("Details", "ClassDetails", new { id=item.ClassNo }) |
+            @Html.ActionLink("Delete", "ClassDelete", new {  id=item.ClassNo })
+        </td>
+    </tr>
+}
+
+</table>

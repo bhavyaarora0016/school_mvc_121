@@ -1,0 +1,25 @@
+﻿
+GitHub Link : https://github.com/bhavyaarora0016/school_mvc_121
+
+
+**************************************************************************************************************
+
+
+Step 1 : I used Entity framework - DB first Approach for this Project. School Database is already there which I 
+		  Created for MSSQL Project. 
+
+Step 2 : Add a ADO Entity File and select DB First approach and give the connection string and click finish. It will create
+		 all the model classes for the table which you mentioned in the School Database.
+
+Step 3 : Crate a new Admin Controller to contol the Action for our School Project. And Name index page as Student to
+		 show the List of the Student and Class , Subject for Index Page for the Class AND Subject respectively.
+		 
+Step 4 : And add StudentCreate Action , Student Edit Action and studentDelete Action and StudentDetails Action and also
+		 Create appropriate  Actions for classes and Subject also.
+
+Step 5 : Create 3	Layout Page for each Model Class. 
+		 
+Step 6 : Create VIEW for each action. for create action slect templte as crate and choose the model class as student 
+		 and select the _studentLayout Page as Layout page and click Add.
+
+Step 7 : Repeat this steps for Class and Subject Models.
